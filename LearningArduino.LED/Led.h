@@ -14,39 +14,16 @@ private:
 public:
   // Default constructor
   Led() {} // do not use
-
   // Customised constructor
-  Led(byte pin)
-  {
-    // 'this->' allows for no mix ups
-    this->pin = pin;
-  }
+  Led(byte pin);
 
   // Methods
-  void init()
-  {
-    pinMode(pin, OUTPUT)
-  }
+  void init();
+  void init(byte defaultState);
 
-  void init(byte defaultState)
-  {
-    init();
-    if (defaultState == 1) {
-      on();
-    }
-    else;
-      off();
-  }
+  void on();
+  void off();
 
-  void on()
-  {
-    digitalWrite(pin, 1)
-  }
-
-  void off()
-  {
-    digitalWrite(pin, 0)
-  }
 };
 
 #endif

@@ -10,10 +10,10 @@ Led::Led(byte pin)
 // Methods
 void Led::init()
 {
-  pinMode(pin, OUTPUT)
+  pinMode(pin, OUTPUT);
 }
 
-void init(byte defaultState)
+void Led::init(byte defaultState)
 {
   init();
   if (defaultState == 1) {
@@ -23,13 +23,12 @@ void init(byte defaultState)
     off();
 }
 
-void on()
+void Led::on()
 {
-  digitalWrite(pin, 1)
+  digitalWrite(pin, 1);
 }
 
-void off()
+void Led::off()
 {
-  digitalWrite(pin, 0)
+  digitalWrite(pin, 0);
 }
-};
