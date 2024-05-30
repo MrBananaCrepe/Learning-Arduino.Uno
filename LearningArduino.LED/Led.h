@@ -18,9 +18,12 @@ public:
   Led(byte pin);
 
   // Methods
+  // Initiate pin for led
+  // Call in setup
   void init();
   void init(byte defaultState);
 
+  // Power led
   void on();
   void off();
 
