@@ -1,9 +1,15 @@
-void setup() {
-  // put your setup code here, to run once:
+#include "PushButton.h"
 
+#define BUTTON_PIN 2
+
+PushButton button(BUTTON_PIN);
+
+void setup() {
+  Serial.begin(115200);
+  button.init();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  Serial.println(button.readState());
+  delay(100);
 }
