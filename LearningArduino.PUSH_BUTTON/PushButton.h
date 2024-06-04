@@ -8,9 +8,10 @@ class PushButton
 private:
   byte pin;
   byte state;
-
   bool isPullUp;
   bool internalPullUpActivated;
+  unsigned long lastTimeStateChanged;
+  unsigned long debounceDelay;
 
   void readState();
 
