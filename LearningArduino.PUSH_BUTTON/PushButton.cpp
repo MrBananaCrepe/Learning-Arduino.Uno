@@ -1,13 +1,21 @@
 #include "PushButton.h"
 
-PushButton::PushButton(byte pin)
+PushButton::PushButton(byte pin, bool isPullUp, bool internalPullUpActivated)
 {
   this->pin = pin;
+  this->isPullUp = isPullUp;
+  this->internalPullUpActivated = internalPullUpActivated;
 }
 
 void PushButton::init()
 {
-  pinMode(pin, INPUT_PULLUP);
+  if (isPullUp && internalPullUpActivated) {
+    pinMode(pin, INPUT_PULLUP);
+  }
+  else {
+    pinMode(pin, INPUT);
+  }
+
   readState();
 }
 
