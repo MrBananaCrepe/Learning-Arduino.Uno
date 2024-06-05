@@ -11,6 +11,7 @@ class Led
 private:
   // Attribute
   byte pin;
+  byte state;
 public:
   // Default constructor
   Led() {} // do not use
@@ -26,6 +27,11 @@ public:
   // Power led
   void on();
   void off();
+
+  //power on/off led depending on state
+  void toggle();
+
+  bool isPoweredOn();
 
 };
 

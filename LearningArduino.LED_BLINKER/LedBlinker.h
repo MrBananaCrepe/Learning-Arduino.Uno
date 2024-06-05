@@ -9,6 +9,8 @@ class LedBlinker
 private:
   Led led;
 
+  void toggleLed();
+
 public:
   LedBlinker() {} // Do not use
   LedBlinker(Led &led);

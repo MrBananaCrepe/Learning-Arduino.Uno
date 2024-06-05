@@ -10,4 +10,9 @@ void LedBlinker::initLed()
   led.init();
 }
 
+void LedBlinker::toggleLed()
+{
+  led.toggle();
+}
+
 

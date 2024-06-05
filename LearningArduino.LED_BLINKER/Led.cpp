@@ -5,6 +5,7 @@ Led::Led(byte pin)
 {
   // 'this->' allows for no mix ups
   this->pin = pin;
+  state = 0;
 }
 
 // Methods
@@ -25,10 +26,29 @@ void Led::init(byte defaultState)
 
 void Led::on()
 {
-  digitalWrite(pin, 1);
+  state = 1;
+  digitalWrite(pin, state);
 }
 
 void Led::off()
 {
-  digitalWrite(pin, 0);
+  state = 0;
+  digitalWrite(pin, state);
 }
+
+bool Led::isPoweredOn()
+{
+  return (state == 1);
+}
+
+void Led::toggle()
+{
+  if (isPoweredOn()) {
+    off();
+  }
+  else {
+    on();
+  }
+}
+
+
