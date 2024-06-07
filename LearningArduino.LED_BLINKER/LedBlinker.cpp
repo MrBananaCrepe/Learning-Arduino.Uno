@@ -33,5 +33,15 @@ void LedBlinker::update()
   }
 }
 
+unsigned long LedBlinker::getBlinkDelay()
+{
+  return blinkDelay;
+}
+
+void LedBlinker::setBlinkDelay(unsigned long blinkDelay)
+{
+  this->blinkDelay = blinkDelay;
+}
+
 
 

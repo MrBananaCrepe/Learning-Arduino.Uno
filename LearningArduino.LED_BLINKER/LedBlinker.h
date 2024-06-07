@@ -22,6 +22,9 @@ public:
 
   void update();
 
+  unsigned long getBlinkDelay();
+  void setBlinkDelay(unsigned long blinkDelay);
+
 };
 
 
