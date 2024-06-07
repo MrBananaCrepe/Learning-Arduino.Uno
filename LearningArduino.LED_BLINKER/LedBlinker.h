@@ -8,14 +8,19 @@ class LedBlinker
 {
 private:
   Led led;
+  unsigned long lastTimeBlinked;
+  unsigned long blinkDelay;
 
   void toggleLed();
 
 public:
   LedBlinker() {} // Do not use
   LedBlinker(Led &led);
+  LedBlinker(Led &led, unsigned long blinkDelay);
 
   void initLed();
+
+  void update();
 
 };
 

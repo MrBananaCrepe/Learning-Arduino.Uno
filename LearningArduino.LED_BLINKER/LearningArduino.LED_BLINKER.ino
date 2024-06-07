@@ -12,7 +12,6 @@ void setup() {
 }
 
 void loop() {
-  led.toggle();
-  delay(500);
+  ledBlinker.update();
 
 }
